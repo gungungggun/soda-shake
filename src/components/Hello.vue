@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     div.walk
-      slick(ref="slick" :options="slickOptions")
+      slick(ref="slick" :options="slickOptions" @afterChange="afterChange")
         div.inner.walk1
           div
             p.step STEP1
@@ -19,6 +19,9 @@
             p.step STEP3
             h1 アニメーションも
             p 時間があればアニメーションをくわえるとなお良い感じになる
+      transition(name="fade")
+        div.comp(v-if="complete")
+          button(@click="comp()") 完了
 </template>
 
 <script>
@@ -31,6 +34,8 @@ export default {
   },
   data () {
     return {
+      number: 2,
+      complete: false,
       slickOptions: {
         dots: true,
         arrows: false,
@@ -40,11 +45,26 @@ export default {
         swipeToSlide: true
       }
     }
+  },
+  methods: {
+    comp: function () {
+    },
+    afterChange: function (e, s, c) {
+      if (c === this.number) {
+        this.complete = true
+      } else {
+        this.complete = false
+      }
+    }
   }
 }
 </script>
 
 <style lang="stylus">
+.fade-enter-active, .fade-leave-active
+  transition opacity .3s
+.fade-enter, .fade-leave-to
+  opacity 0
 .walk
   width 100%
   height 100vh
@@ -92,4 +112,15 @@ export default {
         border-radius 50%
         font-size 0
         outline none
+  .comp
+    position fixed
+    bottom 10px
+    right 10px
+    button
+      background none
+      border none
+      cursor pointer
+      outline none
+      color #fff
+      font-size 14px
 </style>
