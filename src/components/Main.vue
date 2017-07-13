@@ -30,7 +30,7 @@ export default {
   data () {
     return {
       count: 0,
-      threshold: 200
+      threshold: 10
     }
   },
   methods: {
@@ -38,7 +38,7 @@ export default {
       this.count ++
       if (this.count >= this.threshold) {
         this.count = 0
-        navigator.notification.vibrate(2000)
+        navigator.vibrate([200, 100, 200, 100, 100, 100, 2000])
       }
     }
   }
