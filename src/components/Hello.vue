@@ -19,6 +19,8 @@
             p.step STEP3
             h1 アニメーションも
             p 時間があればアニメーションをくわえるとなお良い感じになる
+      div.skip
+        button(@click="comp()") スキップ
       transition(name="fade")
         div.comp(v-if="complete")
           button(@click="comp()") 完了
@@ -48,6 +50,7 @@ export default {
   },
   methods: {
     comp: function () {
+      this.$router.replace('main')
     },
     afterChange: function (e, s, c) {
       if (c === this.number) {
@@ -116,6 +119,17 @@ export default {
     position fixed
     bottom 10px
     right 10px
+    button
+      background none
+      border none
+      cursor pointer
+      outline none
+      color #fff
+      font-size 14px
+  .skip
+    position fixed
+    bottom 10px
+    left 10px
     button
       background none
       border none
