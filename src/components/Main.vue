@@ -1,18 +1,40 @@
 <template lang="pug">
   div.main
     p main
+    p shake {{ count }}
 </template>
 
 <script>
+import Shake from 'shake.js'
+const nShake = new Shake({
+  threshold: 3,
+  timeout: 300
+})
+const fShake = new Shake({
+  threshold: 1,
+  timeout: 50
+})
+const lShake = new Shake({
+  threshold: 15,
+  timeout: 5000
+})
+
 export default {
+  mounted: function () {
+    window.addEventListener('shake', this.shake, false)
+    nShake.start()
+    fShake.start()
+    lShake.start()
+  },
   name: 'main',
   data () {
     return {
-      number: 2
+      count: 0
     }
   },
   methods: {
-    comp: function () {
+    shake: function () {
+      this.count ++
     }
   }
 }
