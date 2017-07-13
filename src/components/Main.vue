@@ -29,12 +29,17 @@ export default {
   name: 'main',
   data () {
     return {
-      count: 0
+      count: 0,
+      threshold: 200
     }
   },
   methods: {
     shake: function () {
       this.count ++
+      if (this.count >= this.threshold) {
+        this.count = 0
+        navigator.notification.vibrate(2000)
+      }
     }
   }
 }
