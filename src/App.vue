@@ -5,6 +5,9 @@
 </template>
 
 <script>
+import store from 'store'
+window.store = store
+
 export default {
   name: 'app'
 }

@@ -31,6 +31,11 @@ import Slick from 'vue-slick'
 require('slick-carousel/slick/slick.css')
 export default {
   name: 'hello',
+  created: function () {
+    if (window.store.get('walk')) {
+      this.$router.replace('main')
+    }
+  },
   components: {
     Slick
   },
@@ -50,6 +55,7 @@ export default {
   },
   methods: {
     comp: function () {
+      window.store.set('walk', true)
       this.$router.replace('main')
     },
     afterChange: function (e, s, c) {
