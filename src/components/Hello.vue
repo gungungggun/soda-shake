@@ -35,7 +35,9 @@ export default {
         dots: true,
         arrows: false,
         infinite: false,
-        edgeFriction: 0
+        edgeFriction: 0,
+        speed: 100,
+        swipeToSlide: true
       }
     }
   }
