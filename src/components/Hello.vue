@@ -83,6 +83,7 @@ export default {
     padding 20px
     color #fff
     height 100vh
+    outline none
     justify-content center
     > div
       margin-top 25vh
