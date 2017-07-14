@@ -1,10 +1,12 @@
 <template lang="pug">
   div.main
+    walk-through(:isWalk="isWalk")
     p main
     p shake {{ count }}
 </template>
 
 <script>
+import WalkThrough from '@/components/WalkThrough'
 import Shake from 'shake.js'
 const nShake = new Shake({
   threshold: 3,
@@ -26,9 +28,13 @@ export default {
     fShake.start()
     lShake.start()
   },
+  components: {
+    WalkThrough
+  },
   name: 'main',
   data () {
     return {
+      isWalk: true,
       count: 0,
       threshold: 10
     }

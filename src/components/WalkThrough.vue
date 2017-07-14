@@ -1,6 +1,6 @@
 <template lang="pug">
-  div
-    div.walk
+  transition(name="fade")
+    div.walk(v-if="isWalk")
       slick(ref="slick" :options="slickOptions" @afterChange="afterChange")
         div.inner.walk1
           div
@@ -33,7 +33,7 @@ export default {
   name: 'hello',
   created: function () {
     if (window.store.get('walk')) {
-      this.$router.replace('main')
+      this.isWalk = false
     }
   },
   components: {
@@ -41,6 +41,7 @@ export default {
   },
   data () {
     return {
+      isWalk: true,
       number: 2,
       complete: false,
       slickOptions: {
@@ -56,7 +57,7 @@ export default {
   methods: {
     comp: function () {
       window.store.set('walk', true)
-      this.$router.replace('main')
+      this.isWalk = false
     },
     afterChange: function (e, s, c) {
       if (c === this.number) {
@@ -124,7 +125,7 @@ export default {
         outline none
   .comp
     position fixed
-    bottom 10px
+    bottom 15px
     right 10px
     button
       background none
@@ -135,7 +136,7 @@ export default {
       font-size 14px
   .skip
     position fixed
-    bottom 10px
+    bottom 15px
     left 10px
     button
       background none
