@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="sodashake.petabitgiken" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>sodashake</name>
+    <name>Soda Shake</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Soda Shake app
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="gun.kimura@gmail.com" href="https://github.com/gungungggun/soda-shake">
+        Gun Kimura
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -15,19 +15,21 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="AutoHideSplashScreen" value="true" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="FadeSplashScreen" value="true" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="Orientation" value="portrait" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <splash density="land-hdpi" src="res/screen/android/screen-hdpi-landscape.png" />
-        <splash density="land-ldpi" src="res/screen/android/screen-ldpi-landscape.png" />
-        <splash density="land-mdpi" src="res/screen/android/screen-mdpi-landscape.png" />
-        <splash density="land-xhdpi" src="res/screen/android/screen-xhdpi-landscape.png" />
-        <splash density="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
-        <splash density="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
-        <splash density="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
-        <splash density="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
+        <splash density="land-hdpi" src="res/screen/android/splash.png" />
+        <splash density="land-ldpi" src="res/screen/android/splash.png" />
+        <splash density="land-mdpi" src="res/screen/android/splash.png" />
+        <splash density="land-xhdpi" src="res/screen/android/splash.png" />
+        <splash density="port-hdpi" src="res/screen/android/splash.png" />
+        <splash density="port-ldpi" src="res/screen/android/splash.png" />
+        <splash density="port-mdpi" src="res/screen/android/splash.png" />
+        <splash density="port-xhdpi" src="res/screen/android/splash.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />

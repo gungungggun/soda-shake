@@ -9,6 +9,7 @@
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "postbuild": "rm -rf ./app/www && mv ./dist ./app/www",
+    "res": "cp res/config.xml app/config.xml && cp -rf res/screen/android/splash.png app/res/screen/android/splash.png",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
