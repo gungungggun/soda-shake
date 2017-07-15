@@ -76,6 +76,10 @@ export default {
 .fade-enter, .fade-leave-to
   opacity 0
 .walk
+  position fixed
+  top 0
+  left 0
+  z-index 10
   width 100%
   height 100vh
   .inner
