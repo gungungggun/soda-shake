@@ -6,6 +6,8 @@
     div.shake
       div.img(:class="shakeClass")
         img(src="static/soda.png")
+    div.bomb(v-if="isBomb")
+      img(src="../assets/bomb.jpg")
 </template>
 
 <script>
@@ -42,6 +44,7 @@ export default {
         shake5: false
       },
       isStart: true,
+      isBomb: false,
       count: 0,
       threshold: Math.floor(Math.random() * 200)
     }
@@ -98,10 +101,17 @@ export default {
 
       if (this.count >= this.threshold) {
         this.count = 0
+        this.isBomb = true
         navigator.vibrate([200, 100, 200, 100, 100, 100, 2000])
         nShake.stop()
         fShake.stop()
         lShake.stop()
+        var self = this
+        setTimeout(function () {
+          self.isBomb = false
+          self.isStart = true
+          self.threshold = Math.floor(Math.random() * 200)
+        }, 3000)
       }
     }
   }
@@ -158,6 +168,13 @@ export default {
   100%
     top 0
     left 0
+@keyframes bomb
+  0%
+    transform scale(1)
+  50%
+    transform scale(1.2)
+  100%
+    transform scale(1)
 .main
   width 100%
   height 100vh
@@ -213,4 +230,21 @@ export default {
         margin 0 auto
         display block
         width 60%
+  .bomb
+    z-index 10
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100vh
+    display flex
+    background #fff
+    justify-content center
+    align-items center
+    animation-name bomb
+    animation-duration 0.5s
+    animation-timing-function ease-out
+    animation-iteration-count infinite
+    img
+      width 80%
 </style>

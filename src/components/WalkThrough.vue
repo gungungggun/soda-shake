@@ -5,20 +5,18 @@
         div.inner.walk1
           div
             p.step STEP1
-            h1 ウォークスルー
-              br
-              | サンプル
-            p slick使って簡単に作るよ
+            h1 振る
+            p 端末を振って炭酸水をシェイクしよう！
         div.inner.walk2
           div
             p.step STEP2
-            h1 スタイルシートが肝
-            p あれこれ凝ればもっといい感じになる
+            h1 遊ぶ
+            p 一定以上振ると炭酸水が爆発するよ！
         div.inner.walk3
           div
             p.step STEP3
-            h1 アニメーションも
-            p 時間があればアニメーションをくわえるとなお良い感じになる
+            h1 やってみよう
+            p みんなでやってもりあがろう！
       div.skip
         button(@click="comp()") スキップ
       transition(name="fade")
