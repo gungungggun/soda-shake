@@ -110,9 +110,12 @@ export default {
         setTimeout(function () {
           self.isBomb = false
           self.isStart = true
-          self.threshold = Math.floor(Math.random() * 200)
+          self.generate()
         }, 3000)
       }
+    },
+    generate: function () {
+      this.threshold = Math.floor(Math.random() * 200) + 100
     }
   }
 }
