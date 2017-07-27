@@ -23,3 +23,7 @@ sharp('res/icon1024x1024.png')
 sharp('res/icon1024x1024.png')
   .resize(192, 192)
   .toFile('app/platforms/android/res/mipmap-xxxhdpi/icon.png')
+
+sharp('res/icon1024x1024.png')
+  .resize(512, 512)
+  .toFile('app/release-icon.png')
